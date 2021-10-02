@@ -1,0 +1,26 @@
+.li {
+    width: 18%;
+    margin-bottom: 10px;
+}
+
+.box {
+    margin-bottom: 10px;
+}
+
+.img { transition: opacity .3s ease; }
+
+.img:hover { opacity: 0.5; }
+
+.desc {
+    min-height: 50px;
+}
+
+.a { text-decoration: none; }
+
+.p {
+    font: 12px WorkSans;
+    color: #1e1e1e;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    word-break: keep-all;
+}

@@ -1,0 +1,10 @@
+.container {
+    padding: 32px 2.5vw;
+    background-color: #feebed;
+}
+
+.ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

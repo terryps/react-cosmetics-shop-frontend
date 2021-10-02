@@ -1,0 +1,39 @@
+.container {
+    background: url("https://meebee.pl/wp-content/uploads/2021/03/tapeta_kasiags.jpg");
+    background-position: center;
+    padding: 50px 0;
+}
+
+.ul {
+    display: table;
+    margin: 0 auto;
+}
+
+.li {
+    display: table-cell;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #1e1e1e;
+    border-left: none;
+    background-color: rgba(250, 249, 245, .5);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.li:first-child {
+    border-left: 1px solid #1e1e1e;
+}
+
+.li:hover {
+    background-color: #e7cdbe;
+}
+
+.active {
+    background-color: #cca892;
+}
+
+.a {
+    text-decoration: none;
+    color: #1e1e1e;
+    font: 600 12px Lora;
+}

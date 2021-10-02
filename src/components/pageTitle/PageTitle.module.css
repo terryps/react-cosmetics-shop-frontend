@@ -1,0 +1,18 @@
+.container {
+    display: table;
+    background: url("https://meebee.pl/wp-content/uploads/2021/03/tapeta_kasiags.jpg");
+    background-position: left 45% top 45%;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
+
+.h1 {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 30px;
+    font: 20px Lora;
+    font-variation-settings: 'wght' 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
