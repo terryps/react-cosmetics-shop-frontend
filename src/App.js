@@ -4,19 +4,21 @@ import Shop from "./pages/Shop";
 import About from "./pages/About";
 import Review from "./pages/Review";
 import Video from "./pages/Video";
-import MainNavigation from "./components/layout/MainNavigation";
+import Layout from "./components/layout/Layout";
 
 function App() {
   return (
     <div className="App">
-      <MainNavigation />
-      <Switch>
+      <Layout>
+        <Switch>
           <Route path="/" exact={true}><Home /></Route>
           <Route path="/shop"><Shop /></Route>
           <Route path="/about"><About /></Route>
           <Route path="/review"><Review /></Route>
           <Route path="/video"><Video /></Route>
-      </Switch>
+        </Switch>
+      </Layout>
+
     </div>
   );
 }
