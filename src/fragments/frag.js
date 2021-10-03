@@ -7,6 +7,9 @@ uniform vec2 u_resolution;
 uniform vec2 u_mouse;
 
 uniform sampler2D u_image;
+uniform float t_ratio;
+uniform float w_divisor;
+uniform float h_divisor;
 
 varying vec2 v_texcoord;
 
@@ -28,10 +31,11 @@ void main(void)
 {
     //where does hue start
     vec2 uv = v_texcoord;
-    uv *= 2.0;
+    uv.x *= w_divisor;
+    uv.y *= h_divisor;
     uv = fract(uv);
     
-    float texture_ratio = 880.0 / 590.0;
+    float texture_ratio = t_ratio;
     float canvas_ratio = u_resolution.x / u_resolution.y;
     
     vec2 coords = aspect(uv, texture_ratio, canvas_ratio);
