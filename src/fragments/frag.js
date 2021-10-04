@@ -21,7 +21,7 @@ vec2 aspect(vec2 uv, float texture_ratio, float canvas_ratio){
     } else {
         float diff = texture_ratio / canvas_ratio;
         uv.y *= diff;
-        uv.y += (1.0 - diff) / 2.0;
+        uv.y += (1.0 - diff) / 2.0 + .1;
     }
     
     return uv;
@@ -51,8 +51,8 @@ void main(void)
     
     
     vec2 distortion = 0.1 * vec2(
-        sin(u_time*.2 + diag1 * 1.0 + diag2 * 1.2 + y + mouse.x),
-        cos(u_time*.5 + diag1 * 1.1 + diag2 * 1.2 + y + mouse.y)
+        sin(u_time*.5 + diag1 * 1.0 + diag2 * 1.2 + .5 * y + mouse.x),
+        cos(u_time*.2 + diag1 * 1.1 + diag2 * 1.2 + mouse.y)
     );
         
     //final pixel color
