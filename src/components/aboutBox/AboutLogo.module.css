@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: 50%;
+}
+
+.img {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.h2 {
+    font: 700 24px Lora;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.p {
+    margin: 0 auto;
+    width: 50%;
+    font: 14px WorkSans;
+    line-height: 2;
+    letter-spacing: 1px;
+    word-break: keep-all;
+}
