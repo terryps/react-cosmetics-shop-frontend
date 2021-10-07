@@ -5,7 +5,6 @@ function ProductItem(props) {
     const {
         id,
         name,
-        category,
         link,
         img1,
         img2,

@@ -24,3 +24,7 @@
     letter-spacing: 1px;
     word-break: keep-all;
 }
+
+/*@media (max-width: 450px) {*/
+/*    .desc { margin-bottom: 20px;}*/
+/*}*/

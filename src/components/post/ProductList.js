@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductItem from "./ProductItem";
-import styles from "./ProductList.module.css";
+import styles from "../post/PostList.module.css";
 
 function ProductList(props) {
     return (
@@ -12,7 +12,6 @@ function ProductList(props) {
                         key={item.id}
                         id={item.id}
                         name={item.name}
-                        category={item.category}
                         link={item.link}
                         img1={item.thumb_img}
                         img2={item.thumb_over_img}

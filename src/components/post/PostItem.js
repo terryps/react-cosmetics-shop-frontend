@@ -4,7 +4,7 @@ import emptyImg from "../../images/no-photo.png";
 function PostItem({id, link, image, title}) {
 
     return (
-        <li className={styles.li}>
+        <li>
             <div className={styles.box}>
                 <a href={link}>
                     { image ?

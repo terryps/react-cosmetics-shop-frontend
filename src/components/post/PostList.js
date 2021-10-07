@@ -4,7 +4,7 @@ import styles from "./PostList.module.css";
 function PostList(props) {
     return (
         <div className={styles.container}>
-            <ul className={styles.list}>
+            <ul className={styles.ul}>
                 {props.currentPosts.map(post => (
                     <PostItem
                         key={post.id}
