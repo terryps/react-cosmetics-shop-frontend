@@ -1,0 +1,16 @@
+.ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 70%;
+    margin: 80px auto;
+}
+
+.ul li {
+    max-width: 32%;
+}
+
+@media (max-width: 325px) {
+    .ul { margin: 40px auto; }
+}
