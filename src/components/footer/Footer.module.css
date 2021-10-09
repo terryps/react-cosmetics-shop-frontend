@@ -1,0 +1,53 @@
+.container {
+    font: 11px Lora;
+}
+
+.h2 {
+    font-size: 12px;
+    font-variation-settings: 'wght' 600;
+    margin-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu {
+    width: 60%;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.menu p {
+    line-height: 18px;
+    padding-bottom: 5px;
+    word-break: break-word;
+}
+
+.menu a:hover {
+    text-decoration: underline;
+}
+
+.sns {
+    width: 250px;
+    margin: 40px auto;
+}
+
+.rights {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 2.5;
+}
+
+.rights a:hover { text-decoration: underline; }
+
+@media (max-width: 900px) {
+    .rights { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .sns { margin: 20px auto; }
+}
