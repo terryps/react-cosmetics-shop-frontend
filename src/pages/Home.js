@@ -1,9 +1,13 @@
+import SnapSection from "../components/container/SnapSection";
+import SnapContainer from "../components/container/SnapContainer";
 import Container from "../components/container/Container";
 import ShaderCanvas from "../components/canvas/ShaderCanvas";
+import Footer from "../components/footer/Footer";
 import { frag } from "../fragments/frag";
 import image1 from "../images/main-image-1.jpg";
 import image2 from "../images/main-image-2.jpg";
 import image3 from "../images/main-image-3.jpg";
+import Coupons from "../components/coupons/Coupons";
 
 const fragImages = [
     {image: image1, textureRatio: 1400.0 / 980.0, widthDivisor: 2.0, heightDivisor: 2.0},
@@ -13,13 +17,20 @@ const fragImages = [
 
 function Home() {
     return (
-        <section>
-            <Container>
-                <ShaderCanvas frag={frag} setUniforms={fragImages} />
-            </Container>
-            <Container></Container>
+        <SnapSection>
+            <SnapContainer>
+                <Container>
+                    <ShaderCanvas frag={frag} setUniforms={fragImages} />
+                </Container>
+            </SnapContainer>
 
-        </section>
+            <SnapContainer>
+                <Container>
+                    <Coupons />
+                    <Footer />
+                </Container>
+            </SnapContainer>
+        </SnapSection>
     );
 }
 

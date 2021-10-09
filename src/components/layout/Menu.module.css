@@ -1,0 +1,25 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 36px;
+    height: 100%;
+    text-align: center;
+
+    position: fixed;
+    z-index: 100;
+}
+
+.span {
+    margin: 10px 0;
+
+    writing-mode: vertical-lr;
+
+    font: 22px Chathura;
+    line-height: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.span:hover { cursor: pointer; }

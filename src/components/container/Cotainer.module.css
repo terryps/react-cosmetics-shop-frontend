@@ -1,5 +1,5 @@
 .container {
     min-height: 754px;
     height: 754px;
-    overflow-x: hidden;
+    overflow: hidden;
 }

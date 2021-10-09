@@ -29,6 +29,9 @@ function ShaderCanvas(props) {
             w_d = Math.ceil(w_d);
             h_d = 1.0;
         }
+        if(container.clientWidth < 400) {
+            w_d = 1.0;
+        }
         sandbox.setUniform("image", setUniforms[current].image);
         sandbox.setUniform("t_ratio", setUniforms[current].textureRatio);
         sandbox.setUniform("w_divisor", w_d);
@@ -66,17 +69,19 @@ function ShaderCanvas(props) {
 
         setVariables(sandbox, current, container);
 
-        window.addEventListener("click", clickHandler, false);
+        node.addEventListener("click", clickHandler, false);
 
         return () => {
-            window.removeEventListener("resize", resizeHandler, false);
-            window.removeEventListener("click", clickHandler, false);
+            node.removeEventListener("resize", resizeHandler, false);
+            node.removeEventListener("click", clickHandler, false);
         };
     }, []);
 
     return (
-        <div className={styles.container} ref={containerRef}>
-            <canvas ref={canvasRef} />
+        <div className={styles.container}>
+            <div className={styles.wrapper} ref={containerRef}>
+                <canvas ref={canvasRef} />
+            </div>
         </div>
     );
 }

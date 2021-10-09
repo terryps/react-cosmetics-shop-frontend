@@ -7,11 +7,12 @@ function FilterButtons({filterBtn, filter, categories}) {
                 {
                     categories.map((cat, idx) => (
                         <li
-                            className={`${styles.li} ${filterBtn===cat && styles.active}`}
+                            className={`${styles.li} ${filterBtn===cat.name && styles.active}`}
+                            style={{cursor: `url(${cat.image}), auto`}}
                             key={idx}
-                            onClick={() => filter(cat)}
+                            onClick={() => filter(cat.name)}
                         >
-                            {cat}
+                            {cat.name}
                         </li>
                     ))
                 }

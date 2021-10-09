@@ -1,12 +1,23 @@
 import React, { useState, useCallback } from 'react';
 import PageTitle from "../components/pageTitle/PageTitle";
 import FilterButtons from "../components/filter/FilterButtons";
-import ProductList from "../components/product/ProductList";
+import ProductList from "../components/post/ProductList";
 import Pagination from "../components/pagination/Pagination";
 import usePagination from "../hooks/PaginationHook";
 import productData from "../data/product-data.json";
 
-const AllCategories = ['All', 'Edition', 'Face', 'Lip', 'Eye', 'Cheek', 'Nail', 'Tools', 'Acc', 'Kit'];
+const AllCategories = [
+    {name: "All", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico01.png"},
+    {name: "Edition", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico03.png"},
+    {name: "Face", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico04.png"},
+    {name: "Lip", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico05.png"},
+    {name: "Eye", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico06.png"},
+    {name: "Cheek", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico07.png"},
+    {name: "Nail", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico08.png"},
+    {name: "Tools", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico09.png"},
+    {name: "Acc", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico10.png"},
+    {name: "Kit", image: "https://stylenanda.com/design1/mobile_kr/3ce_cate_ico11.png"},
+];
 
 function Shop() {
     const [items, setItems] = useState(productData.map(data => ({...data, interest: false, display: true})));
@@ -42,7 +53,10 @@ function Shop() {
     return (
         <section>
             <PageTitle title="3ce shop"/>
-            <FilterButtons filterBtn={filterBtn} filter={filter} categories={AllCategories} />
+            <FilterButtons
+                filterBtn={filterBtn}
+                filter={filter}
+                categories={AllCategories} />
             <ProductList
                 currentItems={currentPosts}
                 handleIconClick={handleIconClick}/>

@@ -5,7 +5,7 @@ import Pagination from "../components/pagination/Pagination";
 import videoData from "../data/video-data.json";
 
 function Video() {
-    const postsPerPage = 30;
+    const postsPerPage = 20;
     const [currentPage, setCurrentPage, currentPosts, paginate] = usePagination(videoData, postsPerPage);
 
     return (

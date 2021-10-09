@@ -10,6 +10,8 @@
     grid-column: 5 / 8;
 }
 
+.reverse .imgContainer .img { height: 60%; }
+
 .reverse .description {
     grid-column: 2 / 4;
 }

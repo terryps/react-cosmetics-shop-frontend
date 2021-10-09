@@ -1,8 +1,9 @@
 .nav {
     position: fixed;
-    z-index: 999;
+    z-index: 100;
     /* modifying padding */
     padding-top: 12px;
+    display: flex;
 }
 
 .ul {
@@ -19,9 +20,8 @@
 }
 
 .a {
-    text-decoration: none;
-    color: #1e1e1e;
-    font: 700 24px Chathura;
+    font: 24px Chathura;
+    letter-spacing: 2px;
 }
 
 .img {

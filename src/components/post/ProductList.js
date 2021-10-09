@@ -15,8 +15,6 @@ function ProductList(props) {
                         link={item.link}
                         img1={item.thumb_img}
                         img2={item.thumb_over_img}
-                        sale={item.sale}
-                        soldout={item.soldout}
                         price={item.price}
                         interest={item.interest}
                         handleIconClick={props.handleIconClick}

@@ -8,8 +8,6 @@ function ProductItem(props) {
         link,
         img1,
         img2,
-        sale,
-        soldout,
         price,
         interest,
         handleIconClick,

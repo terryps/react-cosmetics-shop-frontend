@@ -1,16 +1,49 @@
+import React, { useState } from "react";
 import MainNavigation from "./MainNavigation";
-import {Route, Switch} from "react-router-dom";
-import Home from "../../pages/Home";
-import Shop from "../../pages/Shop";
-import About from "../../pages/About";
-import Review from "../../pages/Review";
-import Video from "../../pages/Video";
+import Menu from "./Menu";
+import Modal from "../modals/Modal";
+import LoginForm from "../modals/LoginForm";
+import LanguageForm from "../modals/LanguageForm";
 
 function Layout(props) {
+    const [loginModalIsOpen, setLoginModalIsOpen] = useState(false);
+    const [langModalIsOpen, setLangModalIsOpen] = useState(false);
+
+    const loginModalHandler = () => {
+        setLoginModalIsOpen(true);
+    };
+
+    const langModalHandler = () => {
+        setLangModalIsOpen(true);
+    };
+
+    const closeModalHandler = () => {
+        setLoginModalIsOpen(false);
+        setLangModalIsOpen(false);
+    };
+
     return (
         <div>
             <MainNavigation />
-            <main>{props.children}</main>
+            <Menu
+                loginModalHandler={loginModalHandler}
+                langModalHandler={langModalHandler}
+            />
+            {
+                loginModalIsOpen &&
+                <Modal onClose={closeModalHandler} text="login">
+                    <LoginForm />
+                </Modal>
+            }
+            {
+                langModalIsOpen &&
+                <Modal onClose={closeModalHandler} text="language">
+                    <LanguageForm />
+                </Modal>
+            }
+            <main>
+                {props.children}
+            </main>
         </div>
     );
 }

@@ -1,11 +1,12 @@
 import PageTitle from "../components/pageTitle/PageTitle";
+import SnapSection from "../components/container/SnapSection";
+import SnapContainer from "../components/container/SnapContainer";
 import Container from "../components/container/Container";
 import AboutBox from "../components/aboutBox/AboutBox";
 import AboutLogo from "../components/aboutBox/AboutLogo";
 import image1 from "../images/about-1.jpg";
 import image2 from "../images/about-2.jpg";
 import image3 from "../images/about-3.jpg";
-import logo from "../images/3ce-logo.png";
 
 const boxContents = [
     {title: "3ce history", image: image1, reverse: false, bgPos: "center", text: '2009년 1월, 스타일난다에서 론칭한 코스메틱 브랜드 3CE.\n여성의 트렌디한 패션을 앞서나간 STYLENANDA는 2007년 여성의 아름다움과 개성을 표현하기 위해 크리에이티브한 감각으로 MAKE-UP LINE 개발을 시작한 후 전문적인 색조 브랜드 ‘3CE’를 론칭했습니다.'},
@@ -17,27 +18,33 @@ const aboutLogo = {title: "3ce", image: "https://stylenanda.com/design/kr/3ce_lo
 
     function About() {
     return (
-        <div>
-            <PageTitle title="3ce" />
+        <SnapSection>
+            <SnapContainer>
+                <PageTitle title="3ce" />
+            </SnapContainer>
             {boxContents.map((boxContent, idx) => (
-                <Container key={idx}>
-                    <AboutBox
-                        title={boxContent.title}
-                        image={boxContent.image}
-                        text={boxContent.text}
-                        reverse={boxContent.reverse}
-                        bgPos={boxContent.bgPos}
+                <SnapContainer key={idx}>
+                    <Container>
+                        <AboutBox
+                            title={boxContent.title}
+                            image={boxContent.image}
+                            text={boxContent.text}
+                            reverse={boxContent.reverse}
+                            bgPos={boxContent.bgPos}
+                        />
+                    </Container>
+                </SnapContainer>
+            ))}
+            <SnapContainer>
+                <Container>
+                    <AboutLogo
+                        title={aboutLogo.title}
+                        image={aboutLogo.image}
+                        text={aboutLogo.text}
                     />
                 </Container>
-            ))}
-            <Container>
-                <AboutLogo
-                    title={aboutLogo.title}
-                    image={aboutLogo.image}
-                    text={aboutLogo.text}
-                />
-            </Container>
-        </div>
+            </SnapContainer>
+        </SnapSection>
     );
 }
 
