@@ -17,7 +17,7 @@ function Pagination({currentPage, postsPerPage, totalPosts, paginate}) {
                     pageNumbers.map(pageNumber => (
                         <li key={pageNumber}
                             className={`${styles.li} ${pageNumber === currentPage && styles.active}`}>
-                            <a href='#'
+                            <a href='/#'
                                className={styles.a}
                                onClick={(e) => paginate(pageNumber, e)}>
                                 {pageNumber}

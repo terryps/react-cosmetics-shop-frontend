@@ -53,13 +53,14 @@ function Shop() {
     return (
         <section>
             <PageTitle title="3ce shop"/>
-            <FilterButtons
-                filterBtn={filterBtn}
-                filter={filter}
-                categories={AllCategories} />
             <ProductList
                 currentItems={currentPosts}
-                handleIconClick={handleIconClick}/>
+                handleIconClick={handleIconClick}>
+                <FilterButtons
+                    filterBtn={filterBtn}
+                    filter={filter}
+                    categories={AllCategories} />
+            </ProductList>
             <Pagination
                 currentPage={currentPage}
                 postsPerPage={itemsPerPage}

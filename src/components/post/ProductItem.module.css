@@ -19,7 +19,7 @@
 
 .p {
     font: 12px WorkSans;
-    color: #1e1e1e;
+    /*color: #1e1e1e;*/
     line-height: 1.6;
     letter-spacing: 1px;
     word-break: keep-all;

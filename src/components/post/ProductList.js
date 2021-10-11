@@ -5,6 +5,7 @@ import styles from "../post/PostList.module.css";
 function ProductList(props) {
     return (
         <div className={styles.container}>
+            {props.children}
             <ul className={styles.ul}>
                 {props.currentItems.map(item => (
                     item.display &&

@@ -23,9 +23,9 @@ function LoginForm() {
                 </button>
                 <div className={styles.block}>
                         <span>
-                            <a className={styles.a} href="#">아이디 찾기</a><br/>
-                            <a className={styles.a} href="#">비밀번호 찾기</a><br/>
-                            <a className={styles.a} href="#">비회원 주문조회</a>
+                            <a className={styles.a} href="/#">아이디 찾기</a><br/>
+                            <a className={styles.a} href="/#">비밀번호 찾기</a><br/>
+                            <a className={styles.a} href="/#">비회원 주문조회</a>
                         </span>
                 </div>
             </div>

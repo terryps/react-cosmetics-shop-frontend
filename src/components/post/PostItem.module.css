@@ -1,13 +1,16 @@
-.box {
-    margin-bottom: 10px;
+.box{
+    max-width: 285px;
+    margin: 0 auto;
 }
+
+.imgWrap { margin-bottom: 10px;}
 
 .img { transition: opacity .3s ease; }
 
 .img:hover { opacity: 0.5; }
 
 .desc {
-    min-height: 50px;
+    min-height: 72px;
 }
 
 .a { text-decoration: none; }

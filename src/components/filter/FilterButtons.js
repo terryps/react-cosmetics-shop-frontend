@@ -2,7 +2,7 @@ import styles from "./FilterButtons.module.css";
 
 function FilterButtons({filterBtn, filter, categories}) {
     return (
-        <div className={styles.container}>
+        <div>
             <ul className={styles.ul}>
                 {
                     categories.map((cat, idx) => (
