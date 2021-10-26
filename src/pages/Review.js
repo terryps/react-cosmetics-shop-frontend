@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PageTitle from "../components/pageTitle/PageTitle";
 import PostList from "../components/post/PostList";
 import usePagination from "../hooks/PaginationHook";
 import Pagination from "../components/pagination/Pagination";
-import reviewData from "../data/review-data.json";
 
 function Review() {
     const postsPerPage = 40;
+    const [reviewData, setReviewData] = useState([]);
     const [currentPage, setCurrentPage, currentPosts, paginate] = usePagination(reviewData, postsPerPage);
+
+    useEffect(()=>{
+        fetch(
+            'https://react-cosmetics-shop-bdae3-default-rtdb.firebaseio.com/review.json',
+        ).then(response => {
+            return response.json();
+        }).then((data) => {
+            setReviewData(data);
+        });
+    },[]);
 
     return (
         <section>
