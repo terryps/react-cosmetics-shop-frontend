@@ -11,6 +11,17 @@
     max-width: 32%;
 }
 
+@media (max-width: 718px) {
+    .ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .ul li {
+        align-self: center;
+        max-width: 50%;
+    }
+}
+
 @media (max-width: 325px) {
     .ul { margin: 40px auto; }
 }

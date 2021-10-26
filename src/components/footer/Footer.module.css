@@ -1,4 +1,5 @@
 .container {
+    padding-bottom: 100px;
     font: 11px Lora;
 }
 
@@ -19,6 +20,8 @@
     min-width: 300px;
     margin: 0 auto;
 }
+
+.menu li { padding-bottom: 20px; }
 
 .menu p {
     line-height: 18px;
@@ -44,8 +47,8 @@
 
 .rights a:hover { text-decoration: underline; }
 
-@media (max-width: 900px) {
-    .rights { width: 100%; }
+@media (max-width: 718px) {
+    .flex { flex-wrap: wrap; }
 }
 
 @media (max-width: 600px) {
