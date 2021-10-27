@@ -15,10 +15,8 @@ function ShaderCanvas(props) {
         const w = container.clientWidth;
         const h = container.clientHeight;
         const dpi = window.devicePixelRatio;
-        // node.width = w * dpi;
-        // node.height = h * dpi;
-        node.width = w * 0.5;
-        node.height = h * 0.5;
+        node.width = w * dpi;
+        node.height = h * dpi;
         node.style.width = w + "px";
         node.style.height = h + "px";
     };
@@ -54,7 +52,7 @@ function ShaderCanvas(props) {
                 node.clientHeight !== container.clientHeight
             ) {
                 resizer(canvasRef.current, containerRef.current);
-                setVariables(sandbox, current, containerRef.current);
+                // setVariables(sandbox, current, containerRef.current);
             }
         };
 
@@ -65,11 +63,11 @@ function ShaderCanvas(props) {
         /// set click event
         const clickHandler = () => {
             current += 1;
-            current %= setUniforms.length;
-            setVariables(sandbox, current, container);
+            // current %= setUniforms.length;
+            // setVariables(sandbox, current, container);
         };
 
-        setVariables(sandbox, current, container);
+        // setVariables(sandbox, current, container);
 
         node.addEventListener("click", clickHandler, false);
 

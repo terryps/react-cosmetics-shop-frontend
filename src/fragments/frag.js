@@ -29,7 +29,6 @@ vec2 aspect(vec2 uv, float texture_ratio, float canvas_ratio){
 
 void main(void)
 {
-    //where does hue start
     vec2 uv = v_texcoord;
     uv.x *= w_divisor;
     uv.y *= h_divisor;
@@ -56,8 +55,8 @@ void main(void)
     );
         
     //final pixel color
-    // vec4 color = texture2D(u_image, coords + distortion);
-    vec4 color = texture2D(u_image, coords);
+    vec4 color = texture2D(u_image, coords + distortion);
+
     gl_FragColor = color;
 }
 `;
