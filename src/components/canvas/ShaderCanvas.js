@@ -15,8 +15,10 @@ function ShaderCanvas(props) {
         const w = container.clientWidth;
         const h = container.clientHeight;
         const dpi = window.devicePixelRatio;
-        node.width = w * dpi;
-        node.height = h * dpi;
+        // node.width = w * dpi;
+        // node.height = h * dpi;
+        node.width = w * 0.5;
+        node.height = h * 0.5;
         node.style.width = w + "px";
         node.style.height = h + "px";
     };
