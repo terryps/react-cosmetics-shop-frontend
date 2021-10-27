@@ -29,6 +29,9 @@ vec2 aspect(vec2 uv, float texture_ratio, float canvas_ratio){
 void main(void)
 {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+    uv.x *= w_divisor;
+    uv.y *= h_divisor;
+    uv = fract(uv);
     
     float texture_ratio = t_ratio;
     float canvas_ratio = u_resolution.x / u_resolution.y;
