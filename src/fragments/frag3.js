@@ -9,6 +9,8 @@ uniform vec2 u_mouse;
 
 uniform sampler2D u_image;
 uniform float t_ratio;
+uniform float w_divisor;
+uniform float h_divisor;
 
 vec2 aspect(vec2 uv, float texture_ratio, float canvas_ratio){
     if(texture_ratio > canvas_ratio) {
@@ -42,8 +44,8 @@ void main(void)
     float diag2 = floor((uv.y + sqrt(3.0) * uv.x) / 2.0 * blocks) / blocks;
     
     vec2 distortion = 0.1 * vec2(
-        sin(u_time*.5 + diag1*1.0 + diag2*1.2),
-        cos(u_time*.2 + diag1*1.1 + diag2*1.2)
+        sin(u_time*.5 + diag1*1.0 + diag2*1.2 + .5*y + mouse.x),
+        cos(u_time*.2 + diag1*1.1 + diag2*1.2 + mouse.y)
     );
     
     vec4 color = texture2D(u_image, coords + distortion);
