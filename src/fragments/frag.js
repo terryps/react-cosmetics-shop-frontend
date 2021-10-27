@@ -56,7 +56,8 @@ void main(void)
     );
         
     //final pixel color
-    vec4 color = texture2D(u_image, coords + distortion);
+    // vec4 color = texture2D(u_image, coords + distortion);
+    vec4 color = texture2D(u_image, coords);
     gl_FragColor = color;
 }
 `;
