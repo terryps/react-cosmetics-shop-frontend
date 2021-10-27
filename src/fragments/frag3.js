@@ -5,6 +5,7 @@ precision highp float;
 
 uniform float u_time;
 uniform vec2 u_resolution;
+uniform vec2 u_mouse;
 
 uniform sampler2D u_image;
 uniform float t_ratio;
@@ -33,14 +34,16 @@ void main(void)
     vec2 coords = aspect(uv, texture_ratio, canvas_ratio);
     coords = mix(vec2(0.1, 0.1), vec2(0.9, 0.9), coords);
     
+    vec2 mouse = u_mouse / u_resolution;
+    
     float blocks = 10.0;
     float y = floor(uv.y * blocks) / blocks;
     float diag1 = floor((uv.y - sqrt(3.0) * uv.x) / 2.0 * blocks) / blocks;
     float diag2 = floor((uv.y + sqrt(3.0) * uv.x) / 2.0 * blocks) / blocks;
     
     vec2 distortion = 0.1 * vec2(
-        sin(u_time*.5),
-        cos(u_time*.2)
+        sin(u_time*.5 + diag1*1.0 + diag2*1.2),
+        cos(u_time*.2 + diag1*1.1 + diag2*1.2)
     );
     
     vec4 color = texture2D(u_image, coords + distortion);
