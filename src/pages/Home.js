@@ -22,7 +22,7 @@ function Home() {
         <SnapSection>
             <SnapContainer>
                 <Container>
-                    <ShaderCanvas frag={frag2} setUniforms={fragImages} />
+                    <ShaderCanvas frag={frag3} setUniforms={fragImages} />
                 </Container>
             </SnapContainer>
 

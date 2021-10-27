@@ -52,7 +52,7 @@ function ShaderCanvas(props) {
                 node.clientHeight !== container.clientHeight
             ) {
                 resizer(canvasRef.current, containerRef.current);
-                // setVariables(sandbox, current, containerRef.current);
+                setVariables(sandbox, current, containerRef.current);
             }
         };
 
@@ -63,11 +63,11 @@ function ShaderCanvas(props) {
         /// set click event
         const clickHandler = () => {
             current += 1;
-            // current %= setUniforms.length;
-            // setVariables(sandbox, current, container);
+            current %= setUniforms.length;
+            setVariables(sandbox, current, container);
         };
 
-        // setVariables(sandbox, current, container);
+        setVariables(sandbox, current, container);
 
         node.addEventListener("click", clickHandler, false);
 

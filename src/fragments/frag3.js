@@ -12,7 +12,7 @@ void main(void)
 {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
     
-    vec4 color = texture2D(u_image);
+    vec4 color = texture2D(u_image, uv);
     
     gl_FragColor = color;
 }
