@@ -7,12 +7,32 @@ uniform float u_time;
 uniform vec2 u_resolution;
 
 uniform sampler2D u_image;
+uniform float t_ratio;
+
+vec2 aspect(vec2 uv, float texture_ratio, float canvas_ratio){
+    if(texture_ratio > canvas_ratio) {
+        float diff = canvas_ratio / texture_ratio;
+        uv.x *= diff;
+        uv.x += (1.0 - diff) / 2.0;
+    } else {
+        float diff = texture_ratio / canvas_ratio;
+        uv.y *= diff;
+        uv.y += (1.0 - diff) / 2.0 + .1;
+    }
+    
+    return uv;
+}
 
 void main(void)
 {
     vec2 uv = gl_FragCoord.xy / u_resolution.xy;
     
-    vec4 color = texture2D(u_image, uv);
+    float texture_ratio = t_ratio;
+    float canvas_ratio = u_resolution.x / u_resolution.y;
+    
+    vec2 coords = aspect(uv, texture_ratio, canvas_ratio);
+    
+    vec4 color = texture2D(u_image, coords);
     
     gl_FragColor = color;
 }
