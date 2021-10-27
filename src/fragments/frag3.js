@@ -31,8 +31,19 @@ void main(void)
     float canvas_ratio = u_resolution.x / u_resolution.y;
     
     vec2 coords = aspect(uv, texture_ratio, canvas_ratio);
+    coords = mix(vec2(0.1, 0.1), vec2(0.9, 0.9), coords);
     
-    vec4 color = texture2D(u_image, coords);
+    float blocks = 10.0;
+    float y = floor(uv.y * blocks) / blocks;
+    float diag1 = floor((uv.y - sqrt(3.0) * uv.x) / 2.0 * blocks) / blocks;
+    float diag2 = floor((uv.y + sqrt(3.0) * uv.x) / 2.0 * blocks) / blocks;
+    
+    vec2 distortion = 0.1 * vec2(
+        sin(u_time*.5),
+        cos(u_time*.2)
+    );
+    
+    vec4 color = texture2D(u_image, coords + distortion);
     
     gl_FragColor = color;
 }
