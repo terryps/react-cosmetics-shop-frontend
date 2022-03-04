@@ -27,7 +27,7 @@ function Shop() {
 
     useEffect(() => {
         fetch(
-            'https://react-cosmetics-shop-bdae3-default-rtdb.firebaseio.com/shop.json'
+            'https://react-cosmetics-shop-2af26-default-rtdb.firebaseio.com/shop.json'
         ).then((response) => {
             return response.json();
         }).then((data) => {
